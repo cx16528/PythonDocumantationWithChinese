@@ -27,13 +27,13 @@
 - glob默认不匹配以点符号（.）开始的文件，如果有这类文件，则需要做特殊处理。
 - 假如当前文件夹包含test.txt和.test.txt两个文件。
 
-### 
-    >>> import glob
-    >>> glob.glob('*.txt')
-    ['test.txt']
-    >>> glob.glob('.*.txt')
-    ['.test.txt']
-
+```python
+>>> import glob
+>>> glob.glob('*.txt')
+['test.txt']
+>>> glob.glob('.*.txt')
+['.test.txt']
+```
 
 ​    
 ## glob模块支持的通配符：
