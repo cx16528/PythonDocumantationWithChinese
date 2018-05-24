@@ -49,4 +49,4 @@
 ## 
 - 总结：虽然glob模块可以很轻松地匹配特定文件和文件夹，但是仅仅支持少量的通配符，没办法像正则表达式一样匹配更复杂的字符串。使用的时候应当认真考虑使用场景，根据需求针对性地选择解决方案。
 - [官方文档](https://docs.python.org/3.5/library/glob.html#module-glob)
-
+- [源代码]（https://github.com/python/cpython/blob/3.5/Lib/glob.py）
