@@ -1,7 +1,7 @@
 # glod模块
 
 
-## 功能描述：glob模块可以使用Unix shell风格的通配符匹配符合特定格式的文件和文件夹，跟windows的文件搜索功能差不多。glob模块并非调用一个子shell实现搜索功能，而是在内部调用了os.listdir()和fnmatch.fnmatch()。
+- [ ] 功能描述：glob模块可以使用Unix shell风格的通配符匹配符合特定格式的文件和文件夹，跟windows的文件搜索功能差不多。glob模块并非调用一个子shell实现搜索功能，而是在内部调用了os.listdir()和fnmatch.fnmatch()。
 
 
 ## glob模块共包含以下3个函数：
@@ -17,3 +17,23 @@
 - [ ] iglob(pathname, recursive=False)
 - 参数与glob()一致。
 - 返回一个迭代器，该迭代器不会同时保存所有匹配到的路径，遍历该迭代器的结果与使用相同参数调用glob()的返回结果一致。
+
+- [ ] escape(pathname)
+- 这个函数是在3.4版本之后才有的，功能是忽略所有通配符。（可以用于测试某文件是否存在）
+- （3.5.1版本该函数不能正常运行，升级到3.5.2之后恢复正常）
+
+
+## 需要注意的地方：
+
+
+- [ ] glob默认不匹配以点符号（.）开始的文件，如果有这类文件，则需要做特殊处理。
+- [ ] 假如当前文件夹包含test.txt和.test.txt两个文件。
+
+### >>> import glob
+    >>> glob.glob('*.txt')
+    ['test.txt']
+    >>> glob.glob('.*.txt')
+    ['.test.txt']
+    
+    
+## glob模块支持的通配符：
